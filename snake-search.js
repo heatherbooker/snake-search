@@ -13,11 +13,23 @@ function insertSnake() {
   spellingCorrection.appendChild(snakeImage);
 }
 
+function countS(string) {
+  return string.match(/s/g).length;
+}
+
 function main() {
   const regexQuotedDoubleS = /".*ss.*"/i;
-  const spellingCorrection = document.querySelector('.js-spelling-recourse-link');
+  const spellingOriginal = document.querySelector('.js-spelling-recourse-link').text;
+  const spellingCorrection = document.querySelector('.js-spelling-suggestion-link').text;
 
-  if (regexQuotedDoubleS.test(spellingCorrection.text)) {
+  const mistake = regexQuotedDoubleS.exec(spellingOriginal);
+  const correction = spellingCorrection.slice(mistake.index).split(' ')[0];
+  const mistakeNumS = countS(mistake[0]);
+  const correctionNumS = countS(correction);
+
+  const hasDoubleS = regexQuotedDoubleS.test(spellingOriginal);
+  const typoHasMoreS = mistakeNumS > correctionNumS;
+  if (hasDoubleS && typoHasMoreS) {
     insertSnake();
   }
 }
