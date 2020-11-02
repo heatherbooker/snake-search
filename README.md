@@ -1,8 +1,10 @@
 # Snake Search Firefox Extension
 
-A browser extension for firefox which works on duckduckgo.com.
+A browser extension for firefox which works on [duckduckgo.com](duckduckgo.com).
 
 It helpss you out when you type too many ssssssssss in your sssssearch.
+
+![screenshot of snake on search page](./snake-screenshot.png)
 
 ## Installation
 
