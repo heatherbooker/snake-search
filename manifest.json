@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Snake Search",
+  "version": "1.0",
+
+  "description": "Addss a cute ssnake whenever your ssearch query hass too many 's's.",
+
+  "icons": {
+    "48": "snake-48x48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.duckduckgo.com/?*"],
+      "js": ["snake-search.js"]
+    }
+  ],
+  "web_accessible_resources": ["snake.png"]
+}
